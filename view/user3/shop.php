@@ -102,59 +102,7 @@
 						</nav>
 						<!-- End of Responsive Menu -->
 					</div>
-					<!-- widget-categories start -->
-					<!-- <aside class="widget widget-categories"> -->
-
-
-
-
-
 					
-					<!-- </aside> -->
-					<!-- widget-categories end -->
-					<!-- Ace Responsive Menu -->
-				
-				
-					<!-- shop-filter start -->
-					<!-- <aside class="widget shop-filter">
-						<h3 class="sidebar-title">price</h3><br>
-						<div class="info_widget">
-							<div id="slider-range"></div>
-							<div id ="amount">
-								<input type ="text" name ="first_price" class="first_price" />
-								<input type ="text" name ="last_price" class="last_price"/>
-							</div>
-							<button class="shop-now">Filter</button>
-						</div>						
-					</aside> -->
-					<!-- shop-filter end -->
-					<!-- widget-color start -->
-					<!-- <aside class="widget widget-color">
-						<h5 class="sidebar-title">colore</h5>
-						<ul>
-							<li><a class="color-1" href="#"></a></li>
-							<li><a class="color-2" href="#"></a></li>
-							<li><a class="color-3" href="#"></a></li>
-							<li><a class="color-4" href="#"></a></li>
-							<li><a class="color-5" href="#"></a></li>
-						</ul>
-					</aside> -->
-					<!-- widget-color end -->
-					
-					<!-- widget-brand start -->
-					<!-- <aside class="widget widget-brand">
-						<h5 class="sidebar-title">Brand</h5>
-						<ul>
-							<li><input type="checkbox" /><a href="#">Country Road</a></li>
-							<li><input type="checkbox" /><a href="#">H&M Home</a></li>
-							<li><input type="checkbox" /><a href="#">Urban outfitters</a></li>
-							<li><input type="checkbox" /><a href="#">Zara home</a></li>
-						</ul>
-					</aside> -->
-					<!-- widget-brand end -->
-					<!-- widget-top-brand start -->
-				
-					<!-- widget-top-brand end -->
 				</div>
 
 
@@ -164,11 +112,11 @@
 						<!-- product-toolbar start -->
 						<div class="product-toolbar">
 							<!-- Shop-menu -->
-							<!-- <div class="shop-menu view-mode">
+							<div class="shop-menu view-mode">
 								<a class="grid-view active" href="#grid-view" data-toggle="tab"><i class="sp-grid-view"></i></a>
 								<a class="list-view" href="#list-view" data-toggle="tab"><i class="sp-list-view"></i></a>
-							</div> -->
-							<!-- <div class="short-by hidden-xs">
+							</div>
+							<div class="short-by hidden-xs">
 								<span>short by</span>
 								<select class="shop-select">
 									<option value="1">default</option>
@@ -177,8 +125,8 @@
 									<option value="1">default</option>
 									<option value="1">default</option>
 								</select>
-							</div> -->
-							<!-- <div class="short-by showing hidden-xs">
+							</div>
+							<div class="short-by showing hidden-xs">
 								<span>showing</span>
 								<select class="shop-select">
 									<option value="1">9</option>
@@ -187,7 +135,7 @@
 									<option value="1">30</option>
 									<option value="1">45</option>
 								</select>
-							</div> -->
+							</div>
 							<!-- pagination -->
 							<div class="shop-pagination">
 								<ul>
@@ -223,7 +171,7 @@
 											</div>
 											<div class="product-brief">
 												<h2><a href="#"><?=$v->ten_sanpham?></a></h2>
-												<h3><?=$v->gia?></h3>
+												<h3><?=number_format($v->gia)?></h3>
 											</div>
 										</div>
 									</div>	
@@ -231,196 +179,32 @@
 									<?php
 										}
 									?>
-									<!-- Single-product end -->
-									<!-- Single-product start -->
-									<!-- <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-										<div class="single-product">
-											<div class="product-photo">
-												<a href="#">
-													<img class="primary-photo" src="<?=template_user3_path?>/img/shop/2.jpg" alt="" />
-													<img class="secondary-photo" src="<?=template_user3_path?>/img/shop/5.jpg" alt="" />
-												</a>
-												<div class="pro-action">
-													<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
-													<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
-													<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
-												</div>
-											</div>
-											<div class="product-brief">
-												<h2><a href="#">Randomised Words</a></h2>
-												<h3>$500.00</h3>
-											</div>
-										</div>
-									</div>		 -->
-									<!-- Single-product end -->
-									<!-- Single-product start -->
-									<!-- <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-										<div class="single-product">
-											<div class="product-photo">
-												<a href="#">
-													<img class="primary-photo" src="<?=template_user3_path?>/img/shop/3.jpg" alt="" />
-													<img class="secondary-photo" src="<?=template_user3_path?>/img/shop/8.jpg" alt="" />
-												</a>
-												<div class="pro-action">
-													<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
-													<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
-													<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
-												</div>
-											</div>
-											<div class="product-brief">
-												<h2><a href="#">Randomised Words</a></h2>
-												<h3>$500.00</h3>
-											</div>
-										</div>
-									</div>		 -->
-									<!-- Single-product end -->
-									<!-- Single-product start -->
-									<!-- <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-										<div class="single-product">
-											<div class="product-photo">
-												<a href="#">
-													<img class="primary-photo" src="<?=template_user3_path?>/img/shop/4.jpg" alt="" />
-													<img class="secondary-photo" src="<?=template_user3_path?>/img/shop/5.jpg" alt="" />
-												</a>
-												<div class="pro-action">
-													<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
-													<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
-													<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
-												</div>
-											</div>
-											<div class="product-brief">
-												<h2><a href="#">Randomised Words</a></h2>
-												<h3>$500.00</h3>
-											</div>
-										</div>
-									</div>		 -->
-									<!-- Single-product end -->
-									<!-- Single-product start -->
-									<!-- <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-										<div class="single-product">
-											<div class="product-photo">
-												<a href="#">
-													<img class="primary-photo" src="<?=template_user3_path?>/img/shop/5.jpg" alt="" />
-													<img class="secondary-photo" src="<?=template_user3_path?>/img/shop/1.jpg" alt="" />
-												</a>
-												<div class="pro-action">
-													<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
-													<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
-													<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
-												</div>
-											</div>
-											<div class="product-brief">
-												<h2><a href="#">Randomised Words</a></h2>
-												<h3>$500.00</h3>
-											</div>
-										</div>
-									</div>		 -->
-									<!-- Single-product end -->
-									<!-- Single-product start -->
-									<!-- <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-										<div class="single-product">
-											<div class="product-photo">
-												<a href="#">
-													<img class="primary-photo" src="<?=template_user3_path?>/img/shop/6.jpg" alt="" />
-													<img class="secondary-photo" src="<?=template_user3_path?>/img/shop/2.jpg" alt="" />
-												</a>
-												<div class="pro-action">
-													<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
-													<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
-													<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
-												</div>
-											</div>
-											<div class="product-brief">
-												<h2><a href="#">Randomised Words</a></h2>
-												<h3>$500.00</h3>
-											</div>
-										</div>
-									</div>		 -->
-									<!-- Single-product end -->
-									<!-- Single-product start -->
-									<!-- <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-										<div class="single-product">
-											<div class="product-photo">
-												<a href="#">
-													<img class="primary-photo" src="<?=template_user3_path?>/img/shop/7.jpg" alt="" />
-													<img class="secondary-photo" src="<?=template_user3_path?>/img/shop/3.jpg" alt="" />
-												</a>
-												<div class="pro-action">
-													<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
-													<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
-													<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
-												</div>
-											</div>
-											<div class="product-brief">
-												<h2><a href="#">Randomised Words</a></h2>
-												<h3>$500.00</h3>
-											</div>
-										</div>
-									</div>		 -->
-									<!-- Single-product end -->
-									<!-- Single-product start -->
-									<!-- <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-										<div class="single-product">
-											<div class="product-photo">
-												<a href="#">
-													<img class="primary-photo" src="<?=template_user3_path?>/img/shop/8.jpg" alt="" />
-													<img class="secondary-photo" src="<?=template_user3_path?>/img/shop/4.jpg" alt="" />
-												</a>
-												<div class="pro-action">
-													<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
-													<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
-													<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
-												</div>
-											</div>
-											<div class="product-brief">
-												<h2><a href="#">Randomised Words</a></h2>
-												<h3>$500.00</h3>
-											</div>
-										</div>
-									</div>		 -->
-									<!-- Single-product end -->
-									<!-- Single-product start -->
-									<!-- <div class="col-lg-4  hidden-md  hidden-sm col-xs-12">
-										<div class="single-product">
-											<div class="product-photo">
-												<a href="#">
-													<img class="primary-photo" src="<?=template_user3_path?>/img/shop/9.jpg" alt="" />
-													<img class="secondary-photo" src="<?=template_user3_path?>/img/shop/5.jpg" alt="" />
-												</a>
-												<div class="pro-action">
-													<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
-													<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
-													<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
-												</div>
-											</div>
-											<div class="product-brief">
-												<h2><a href="#">Randomised Words</a></h2>
-												<h3>$500.00</h3>
-											</div>
-										</div>
-									</div>		 -->
-									<!-- Single-product end -->
+									
 								</div>
 							</div>
 							<div role="tabpanel" class="tab-pane" id="list-view"> 
 								<div class="row shop-list">
+								<?php
+										foreach($data['sanpham'] as $v)
+										{
+									?>
 									<!-- Single-product start -->
 									<div class="col-md-12">
 										<div class="single-product">
 											<div class="product-photo">
 												<a href="#">
-													<img class="primary-photo" src="<?=template_user3_path?>/img/shop-list/1.jpg" alt="" />
-													<img class="secondary-photo" src="<?=template_user3_path?>/img/shop-list/5.jpg" alt="" />
+													<img class="primary-photo" src="<?=domainpic.$v->hinhdaidiensanpham?>" alt="" />
+													<img class="secondary-photo" src="<?=domainpic.$v->hinhdaidiensanpham?> alt="" />
 												</a>
 												<div class="pro-action">
 													<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
-													<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
+													<a href="?controller=cart_user3&&act=add_cart&&id=<?php echo  $v->id_sanpham ?> " class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
 													<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
 												</div>
 											</div>
 											<div class="product-brief">
-												<h2><a href="#">Lacina Linen Pant</a></h2>
-												<h3>$500.00</h3>
+												<h2><a href="#"><?=$v->ten_sanpham?></a></h2>
+												<h3><?=number_format($v->gia)?></h3>
 												<div class="porduct-desc">
 													<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, temporamet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
 												</div>
@@ -439,115 +223,9 @@
 											</div>
 										</div>	
 									</div>
-									<!-- Single-product end -->
-									<!-- Single-product start -->
-									<div class="col-md-12">
-										<div class="single-product">
-											<div class="product-photo">
-												<a href="#">
-													<img class="primary-photo" src="<?=template_user3_path?>/img/shop-list/5.jpg" alt="" />
-													<img class="secondary-photo" src="<?=template_user3_path?>/img/shop-list/1.jpg" alt="" />
-												</a>
-												<div class="pro-action">
-													<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
-													<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
-													<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
-												</div>
-											</div>
-											<div class="product-brief">
-												<h2><a href="#">Lacina Linen Pant</a></h2>
-												<h3>$500.00</h3>
-												<div class="porduct-desc">
-													<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, temporamet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-												</div>
-												<div class="pro-quick-view">
-													<div class="quick-view">
-														<a href="#" data-toggle="modal"  data-target="#productModal" title="Quick View">Quick View</a>
-													</div>
-													<div class="pro-rating">
-														<a href="#"><i class="sp-star rating-1"></i></a>
-														<a href="#"><i class="sp-star rating-1"></i></a>
-														<a href="#"><i class="sp-star rating-1"></i></a>
-														<a href="#"><i class="sp-star rating-1"></i></a>
-														<a href="#"><i class="sp-star rating-2"></i></a>
-													</div>
-												</div>
-											</div>
-										</div>	
-									</div>
-									<!-- Single-product end -->
-									<!-- Single-product start -->
-									<div class="col-md-12">
-										<div class="single-product">
-											<div class="product-photo">
-												<a href="#">
-													<img class="primary-photo" src="<?=template_user3_path?>/img/shop-list/2.jpg" alt="" />
-													<img class="secondary-photo" src="<?=template_user3_path?>/img/shop-list/3.jpg" alt="" />
-												</a>
-												<div class="pro-action">
-													<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
-													<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
-													<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
-												</div>
-											</div>
-											<div class="product-brief">
-												<h2><a href="#">Lacina Linen Pant</a></h2>
-												<h3>$500.00</h3>
-												<div class="porduct-desc">
-													<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, temporamet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-												</div>
-												<div class="pro-quick-view">
-													<div class="quick-view">
-														<a href="#" data-toggle="modal"  data-target="#productModal" title="Quick View">Quick View</a>
-													</div>
-													<div class="pro-rating">
-														<a href="#"><i class="sp-star rating-1"></i></a>
-														<a href="#"><i class="sp-star rating-1"></i></a>
-														<a href="#"><i class="sp-star rating-1"></i></a>
-														<a href="#"><i class="sp-star rating-1"></i></a>
-														<a href="#"><i class="sp-star rating-2"></i></a>
-													</div>
-												</div>
-											</div>
-										</div>	
-									</div>
-									<!-- Single-product end -->
-									<!-- Single-product start -->
-									<div class="col-md-12">
-										<div class="single-product">
-											<div class="product-photo">
-												<a href="#">
-													<img class="primary-photo" src="<?=template_user3_path?>/img/shop-list/3.jpg" alt="" />
-													<img class="secondary-photo" src="<?=template_user3_path?>/img/shop-list/2.jpg" alt="" />
-												</a>
-												<div class="pro-action">
-													<a href="#" class="action-btn"><i class="sp-heart"></i><span>Wishlist</span></a>
-													<a href="#" class="action-btn"><i class="sp-shopping-cart"></i><span>Add to cart</span></a>
-													<a href="#" class="action-btn"><i class="sp-compare-alt"></i><span>Compare</span></a>
-												</div>
-											</div>
-											<div class="product-brief">
-												<h2><a href="#">Lacina Linen Pant</a></h2>
-												<h3>$500.00</h3>
-												<div class="porduct-desc">
-													<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, temporamet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-												</div>
-												<div class="pro-quick-view">
-													<div class="quick-view">
-														<a href="#" data-toggle="modal"  data-target="#productModal" title="Quick View">Quick View</a>
-													</div>
-													<div class="pro-rating">
-														<a href="#"><i class="sp-star rating-1"></i></a>
-														<a href="#"><i class="sp-star rating-1"></i></a>
-														<a href="#"><i class="sp-star rating-1"></i></a>
-														<a href="#"><i class="sp-star rating-1"></i></a>
-														<a href="#"><i class="sp-star rating-2"></i></a>
-													</div>
-												</div>
-											</div>
-										</div>	
-									</div>
-									<!-- Single-product end -->
+									<?php
+										}
+									?>
 								</div>
 							</div>
 						</div>
@@ -555,11 +233,11 @@
 						<!-- product-toolbar start -->
 						<div class="product-toolbar btm-border">
 							<!-- Shop-menu -->
-							<!-- <div class="shop-menu view-mode">
+							<div class="shop-menu view-mode">
 								<a class="grid-view active" href="#grid-view" data-toggle="tab"><i class="sp-grid-view"></i></a>
 								<a class="list-view" href="#list-view" data-toggle="tab"><i class="sp-list-view"></i></a>
-							</div> -->
-							<!-- <div class="short-by hidden-xs">
+							</div>
+							<div class="short-by hidden-xs">
 								<span>short by</span>
 								<select class="shop-select">
 									<option value="1">default</option>
@@ -568,8 +246,8 @@
 									<option value="1">default</option>
 									<option value="1">default</option>
 								</select>
-							</div> -->
-							<!-- <div class="short-by showing hidden-xs">
+							</div>
+							<div class="short-by showing hidden-xs">
 								<span>showing</span>
 								<select class="shop-select">
 									<option value="1">9</option>
@@ -578,7 +256,7 @@
 									<option value="1">30</option>
 									<option value="1">45</option>
 								</select>
-							</div> -->
+							</div>
 							<!-- Pagination -->
 							<div class="shop-pagination">
 								<ul>
@@ -598,7 +276,7 @@
 	</div>
 	<!-- SHOP-AREA END -->
 	<!-- BANNER-AREA START -->
-	<!-- <div class="banner-area fix margin-bottom-80">
+	<div class="banner-area fix margin-bottom-80">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -608,11 +286,11 @@
 				</div>
 			</div>
 		</div>
-	</div> -->
+	</div>
 	<!-- BANNER-AREA END -->
        
 	<!-- BANNER-AREA START -->
-	<!-- <div class="banner-area fix margin-bottom-80">
+	<div class="banner-area fix margin-bottom-80">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-xs-12">
@@ -632,7 +310,7 @@
 				</div>
 			</div>
 		</div>
-	</div> -->
+	</div>
 	<!-- BANNER-AREA END -->
 	
 	<!-- SERVICE-AREA START -->
