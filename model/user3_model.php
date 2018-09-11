@@ -1,13 +1,19 @@
 <?php 
  ob_start();//cached output, tranh loi khi su dung header(...)
- session_start();
+//  session_start();
 class user3_model extends model
 {
-    function seach($kw)
+    function seach($kw="")
     {
-        $sql="SELECT * FROM table_sanpham WHERE ten_sanpham LIKE '%$kw%';";
-        $this->setquery($sql);
-        return $this->loadallrow();
+        if(is_null($kw))
+            return false;
+        else
+        {
+            $sql="SELECT * FROM table_sanpham WHERE ten_sanpham LIKE '%$kw%';";
+            $this->setquery($sql);
+            return $this->loadallrow();     
+        }
+        
     }
     
     function check_login_model($user,$pass,$remem)
@@ -34,6 +40,7 @@ class user3_model extends model
                                 session_start();
                                 $thongbao="<div class='alert alert-success'> Đăng nhập thành công !! </div>";
                                 $_SESSION['login']=true;
+                                // $_SESSION['cart']=true;
                                 $_SESSION['user_dangnhap']=$user;
                                 $_SESSION['pass_dangnhap']=$pass;
                                 $_SESSION['ten_quantri']=$v->ten_quantri; 
@@ -83,12 +90,12 @@ class user3_model extends model
         // unset($_SESSION['pass_dangnhap']);
         // unset($_SESSION['ten_quantri']);
         // unset($_SESSION['awatar_nguoidung']);
-       
+        session_start();
         setcookie('login_user','1',time()-1);
-        setcookie('user_dangnhap',$_SESSION['user_dangnhap'],time()-1);
-        setcookie('pass_dangnhap',$_SESSION['pass_dangnhap'],time()-1);
-        setcookie('awatar_nguoidung',$_SESSION['awatar_nguoidung'],time()-1);
-        setcookie('ten_quantri',$_SESSION['ten_quantri'],time()-1);
+        setcookie('user_dangnhap','1',time()-1);
+        setcookie('pass_dangnhap','1',time()-1);
+        setcookie('awatar_nguoidung','1',time()-1);
+        setcookie('ten_quantri','1',time()-1);
         session_destroy();
         
         return true;

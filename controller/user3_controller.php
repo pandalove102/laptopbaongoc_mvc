@@ -6,9 +6,31 @@ class user3_controller extends controller
         $this->pathview = 'view/user3/';
        
     }
+    function mini_cart()
+    {
+        if(isset($_SESSION['login']) &&  $_SESSION['login'])
+        {
+            
+        }
+        else
+        {
+            return "";
+        }
+    }
     function trangchu()
     {
-        $this->render('home1',$data = array(),'layout_user3');
+        ob_start();//cached output, tranh loi khi su dung header(...)
+        $_SESSION['user_dangnhap']="";
+        $_SESSION['pass_dangnhap']="";
+        $_SESSION['ten_quantri']="";
+        $_SESSION['awatar_nguoidung']="";
+        $_SESSION['login']=FALSE;
+        setcookie('login_user','1',time()-1);
+        setcookie('user_dangnhap',"",time()-1);
+        setcookie('pass_dangnhap',"",time()-1);
+        setcookie('awatar_nguoidung',"",time()-1);
+        setcookie('ten_quantri',"",time()-1);
+        $this->render('home1',$data=array(),'layout_user3');
     }
     function trangchu2()
     {
@@ -20,7 +42,7 @@ class user3_controller extends controller
     }
     function shop()
     {
-        
+          $data=array('minicart'=>$this->mini_cart());
         if(isset($_GET['id_danhmuc']) && $_GET['id_danhmuc'])
         {
             $id_danhmuc=$_GET['id_danhmuc'];
@@ -117,8 +139,30 @@ class user3_controller extends controller
   
     function search()
     { 
-        xem_arr($_POST);
-        $this->render('search',$data = array(),'layout_user3');
+        $sr1=new nhacungcap_model();
+        $sr2=new nhomsanpham_model();
+        $sr3=new user3_model();
+       
+        if(isset($_POST['kw']) && $_POST['kw'])
+        {
+            $kw=$_POST['kw'];
+            $data=array(
+                'nhacungcap'=>$sr1->danhsach_nhacungcap_model(),
+                'nhomsanpham'=>$sr2->danhsach_nhomsanpham_model(),
+                'search'=>$sr3->seach($kw)
+            );
+            $this->render('search',$data,'layout_user3');
+        }else
+        {
+            $data=array(
+                'nhacungcap'=>$sr1->danhsach_nhacungcap_model(),
+                'nhomsanpham'=>$sr2->danhsach_nhomsanpham_model(),
+                'thongbao'=>"Không có kết quả tìm kiếm , vui lòng nhập từ khoá cần tìm !! "
+            );
+            $this->render('search',$data,'layout_user3');
+        }
+        //SELECT * FROM table_sanpham WHERE ten_sanpham LIKE '%hp%' and gia BETWEEN 100 and 7000000 and id_nhomsanpham=3 and id_nhacungcap=3
+       
     }
     // logout
     function logout()

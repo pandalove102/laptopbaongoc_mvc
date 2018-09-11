@@ -4,6 +4,11 @@
     error_reporting(E_ALL);
     $sr=new cart_user3_controller();
     $_SESSION['sl']=$sr->countcart();
+    if(!isset($_SESSION['login']))
+    {
+        $_SESSION['login']=FALSE;
+    }
+
     // if(!isset($_SESSION['cart']))
     // $_SESSION['cart'] = array();
 ?>
@@ -123,15 +128,15 @@
                                             <li><a href="?controller=user3&act=singleblog">Single-blog</a></li>
                                         </ul>
                                     </li>
-                                    <?php if( isset($_SESSION['login_user']) && $_SESSION['login_user']==true) 
+                                    <li><a href="?controller=user3&act=search">Search</a></li>
+                                    <li><a href="?controller=user3&act=contact">contact</a></li>
+                                    <?php if( isset($_SESSION['login']) && $_SESSION['login']==true) 
                                         echo  
                                         '<li><a href="?controller=user3&act=cart">Cart</a></li>
-                                        <li><a href="?controller=user3&act=wishlist">Wishlist</a></li>
-    
                                         <li><a href="?controller=user3&act=account">My Account</a>
                                             <ul class="submenu">
                                                 <li><a href="?controller=user3&act=account">My Account</a></li>
-                                                <!-- <li><a href="?controller=user3&act=wishlist">Wishlist</a></li> -->
+                                                <li><a href="?controller=user3&act=wishlist">Wishlist</a></li>
                                                 <li><a href="?controller=user3&act=checkout">Checkout</a></li>
                                                 <li><a href="?controller=user3&act=login">Login</a></li>
                                                 <li><a href="?controller=user3&act=logout">Logout</a></li>
@@ -142,27 +147,8 @@
                                         
                                     }
                                     ?>
-                                    <!-- <li><a href="#">Pages</a>
-                                        <ul class="submenu">
-                                            <li class="submenu-title"><a href="#">All pages</a></li>
-                                            <li><a href="">Shop</a></li>
-                                            <li><a href="">Shop-List</a></li>
-                                            <li><a href="">Single Product</a></li>
-                                            <li><a href="">Shopping Cart</a></li>
-                                            <li><a href="">Wishlist</a></li>
-                                            <li><a href="">Checkout</a></li>
-                                            <li><a href="">Login</a></li>
-                                            <li><a href="">My Account</a></li>
-                                            <li><a href="">Blog</a></li>
-                                            <li><a href="">Single-Blog</a></li>
-                                            <li><a href="">About</a></li>
-                                            <li><a href="">404</a></li>
-                                            <li><a href="">Contact Us</a></li>
-                                        </ul>
-                                    </li> -->
-                                    <li><a href="?controller=user3&act=contact">contact</a></li>
-                                    <li><a href="?controller=user3&act=seach_name_product">Search</a></li>
-                                    <?php if(isset($_SESSION['login']) && $_SESSION['login']=true) 
+                                  
+                                    <?php if(isset($_SESSION['login']) && $_SESSION['login']==true) 
                                         echo '<li><a href="?controller=user3&act=logout">Logout</a></li>';
                                     else
                                     {
@@ -174,77 +160,64 @@
                         </div>
                     </div>
                     <div class="col-md-2 col-sm-6 col-xs-12">
-                        <div class="total-cart">
-                            <ul>
-                                <li>
-                                    <a href="?controller=user3&act=cart">
-                                        <span class="total-cart-number"><?php echo("{$_SESSION['sl']}");?> Item</span>
-                                        <span><i class="sp-shopping-bag"></i></span>
-                                    </a>
-                                   
-                                    <!-- Mini-cart-content Start -->
+                      <!-- mini cart -->
+                      <div class="total-cart">
+                        <ul>
+                            <li>
+                               
+                                <a href="?controller=user3&act=cart">
+                                    <span class="total-cart-number"><?=$_SESSION['sl']?> Item</span>
+                                    <span><i class="sp-shopping-bag"></i></span>
+                                </a>
+                                
+                                <!-- Mini-cart-content Start -->
+                                <?php 
+                               if (is_array($_SESSION['login']) && isset($_SESSION['login']) && $_SESSION['login'] )
+                               {
+                                ?>
                                     <div class="total-cart-brief">
-                                    <?php 
-                                       if (is_array($_SESSION['cart']) || is_object($_SESSION['cart']))
-                                       {
-                                           $total=0;
-                                           foreach($_SESSION['cart'] as $k=>$v)
-                                           {
-                                               $tt=$v['soluong']*$v['gia'];
-                                               $total+=$tt;     
-
+                                    <?php
+                                        if($_SESSION['sl']>0)
+                                        {
+                                            $total=0;
+                                            foreach($_SESSION['cart'] as $k=>$v)
+                                            {
+                                                $tt=$v['soluong']*$v['gia'];
+                                                $total+=$tt; 
                                     ?>
-                                        <div class="cart-photo-details">
-                                            <div class="cart-photo">
-                                                <a href="#"><img src="<?=domainpic?><?php echo $v['hinhdaidiensanpham'] ?>" alt="" /></a>
+                                            <div class="cart-photo-details">
+                                                <div class="cart-photo">
+                                                    <a href="#"><img src="<?=domainpic?><?php echo @$v['hinhdaidiensanpham'] ?>" alt="" /></a>
+                                                </div>
+                                                <div class="cart-photo-brief">
+                                                    <a href="#"><?php echo @$v['ten_sanpham'] ?></a>
+                                                    <span><?php echo number_format(@$v['gia']) ?></span>
+                                                </div>
+                                                <div class="pro-delete">
+                                                    <a href="?controller=cart_user3&&act=dell_sanpham&&id=<?php echo $v['id_sanpham'] ?>"><i class="sp-circle-close"></i></a>
+                                                </div>
                                             </div>
-                                            <div class="cart-photo-brief">
-                                                <a href="#"><?php echo $v['ten_sanpham'] ?></a>
-                                                <span><?php echo number_format(@$v['gia']) ?></span>
+                                        <?php
+                                                }
+                                            }
+                                        ?>
+                                            <div class="cart-subtotal">
+                                                <p>Total = <?php echo number_format(@$total) ?></p>
                                             </div>
-                                            <div class="pro-delete">
-                                                <a href="?controller=cart_user3&&act=dell_sanpham&&id=<?php echo $v['id_sanpham'] ?>"><i class="sp-circle-close"></i></a>
+                                            <div class="cart-inner-btm">
+                                                <a href="?controller=user3&act=checkout">Checkout</a>
+                                                </div>
                                             </div>
-                                        </div>
-                                    <?php 
-                                           }
+                                            <!-- Mini-cart-content End -->
+                                     <?php
                                         }
                                     ?>
-                                        <!-- <div class="cart-photo-details">
-                                            <div class="cart-photo">
-                                                <a href="#"><img src="<?=domainpic?>80-106-1.jpg" alt="" /></a>
-                                            </div>
-                                            <div class="cart-photo-brief">
-                                                <a href="#">Men's Shirt Shirt</a>
-                                                <span>$25.00</span>
-                                            </div>
-                                            <div class="pro-delete">
-                                                <a href="#"><i class="sp-circle-close"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="cart-photo-details">
-                                            <div class="cart-photo">
-                                                <a href="#"><img src="<?=domainpic?>80-106-1.jpg" alt="" /></a>
-                                            </div>
-                                            <div class="cart-photo-brief">
-                                                <a href="#">Men's Shirt Shirt</a>
-                                                <span>$25.00</span>
-                                            </div>
-                                            <div class="pro-delete">
-                                                <a href="#"><i class="sp-circle-close"></i></a>
-                                            </div>
-                                        </div> -->
-                                        <div class="cart-subtotal">
-                                            <p>Total = <?php echo number_format($total) ?></p>
-                                        </div>
-                                        <div class="cart-inner-btm">
-                                            <a href="?controller=user3&act=checkout">Checkout</a>
-                                        </div>
-                                    </div>
-                                    <!-- Mini-cart-content End -->
-                                </li>
-                            </ul>
-                        </div>
+
+                                    
+                            </li>
+                        </ul>
+                    </div>
+                      <!-- mini cart -->
                     </div>
                 </div>
             </div>
@@ -270,21 +243,11 @@
                     </div>
                     <div class="col-md-6 col-sm-6">
                         <div class="header-top-left pull-center">
-                            <!-- <ul>
-                                <li><a href="#">Account <span><i class="sp-gear"></i></span></a>
-                                    <ul class="submenu">
-                                        <li><a href="?controller=user3&act=account">My Account</a></li>
-                                        <li><a href="?controller=user3&act=wishlist">Wishlist</a></li>
-                                        <li><a href="?controller=user3&act=checkout">Checkout</a></li>
-                                        <li><a href="?controller=user3&act=login">Login</a></li>
-                                        <li><a href="?controller=user3&act=logout">Logout</a></li>
-                                    </ul>
-                                </li>
-                            </ul> -->
+                            
                             <div class="header-search">
-                                <form action="?controller=user3&act=cart"  method="get" >
-                                    <input type="text" name="kw" placeholder="Search..." />
-                                    <button type="submit"><i class="sp-search"></i></button>
+                                <form action="?controller=user3&act=search"  method="post" >
+                                    <input type="text" value  name="kw" placeholder="Search..." />
+                                    <a href="?controller=user3&act=search"><button type="submit"><i class="sp-search"></i></button></a>
                                 </form>
                             </div>
                         </div>
@@ -309,7 +272,7 @@
                                         </ul>
                                     </li>
                                     <!-- <li><a href="shop.html">mens</a></li> -->
-                                    <!-- <li><a href="shop-list.html">womens</a></li> -->
+                                    <!-- <li><a href="shop-list.html">Shop</a></li> -->
                                     <li><a href="#">Laptop</a>
                                         <ul class="submenu">
                                             <li><a href="#">Dell</a></li>
@@ -346,28 +309,27 @@
                                             <li><a href="?controller=user3&act=singleblog">Single-blog</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="?controller=user3&act=cart">Cart</a></li>
-                                    <li><a href="?controller=user3&act=wishlist">Wishlist</a></li>
-                                    <li><a href="?controller=user3&act=account">My Account</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="submenu">
-                                            <li class="submenu-title"><a href="#">All pages</a></li>
-                                            <li><a href="">Shop</a></li>
-                                            <li><a href="">Shop-List</a></li>
-                                            <li><a href="">Single Product</a></li>
-                                            <li><a href="">Shopping Cart</a></li>
-                                            <li><a href="">Wishlist</a></li>
-                                            <li><a href="">Checkout</a></li>
-                                            <li><a href="">Login</a></li>
-                                            <li><a href="">My Account</a></li>
-                                            <li><a href="">Blog</a></li>
-                                            <li><a href="">Single-Blog</a></li>
-                                            <li><a href="">About</a></li>
-                                            <li><a href="">Contact Us</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="?controller=user3&act=contact">contact</a></li>
                                     <li><a href="?controller=user3&act=search">Search</a></li>
+                                    <li><a href="?controller=user3&act=contact">contact</a></li>
+                                    <?php if(isset($_SESSION['login']) && $_SESSION['login']==true) 
+                                        echo '
+                                            <li><a href="?controller=user3&act=cart">Cart</a></li>
+                                            <li><a href="?controller=user3&act=account">My Account</a></li>
+                                                <ul class="submenu">
+                                                    <li><a href="?controller=user3&act=account">My Account</a></li>
+                                                    <li><a href="?controller=user3&act=wishlist">Wishlist</a></li>
+                                                    <li><a href="?controller=user3&act=checkout">Checkout</a></li>
+                                                    <li><a href="?controller=user3&act=login">Login</a></li>
+                                                    <li><a href="?controller=user3&act=logout">Logout</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="?controller=user3&act=logout">Logout</a></li>';
+                                    else
+                                    {
+                                        echo '<li><a href="?controller=user3&act=login">Login</a></li>';
+                                    }
+                                    ?>
+                                   
                                 </ul>
                             </nav>
                         </div>
@@ -436,14 +398,14 @@
 							</div>
 							<div class="col-md-3 col-sm-4 col-xs-12">
 								<div class="single-footer footer-message">
-									<form action="#">
+									<!-- <form action="#"> -->
 										<h2>Quick contact</h2>
 										<div class="footer-message-box">
 											<input type="text" placeholder="your email address" />
 											<textarea placeholder="your messege" ></textarea>
 											<input type="submit" value="submit"/>
 										</div>
-									</form>
+									<!-- </form> -->
 								</div>
 							</div>
 						</div>

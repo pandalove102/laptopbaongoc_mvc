@@ -1,3 +1,12 @@
+<?php
+// xem_arr($data);
+?>
+	<style>
+	.page-banner-area {
+		background: rgba(0, 0, 0, 0) url(http://localhost/laptopbaongoc_mvc/file/1920-400-1.jpg) no-repeat scroll center center;
+	}
+	</style>
+	
 		<section class="page-content">
 			<!-- PAGE-BANNER START -->
 			<div class="page-banner-area margin-bottom-80">

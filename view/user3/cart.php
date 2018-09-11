@@ -53,9 +53,10 @@
 										</thead>
 										<tbody>
 									<?php
-										if (is_array($_SESSION['cart']) || is_object($_SESSION['cart']))
+										$total=0;
+										if (isset($_SESSION['cart']) && $_SESSION['cart'] && count($_SESSION['cart'])>0)
 										{
-											$total=0;
+										
 											foreach($_SESSION['cart'] as $k=>$v)
 											{
 												$tt=$v['soluong']*$v['gia'];
